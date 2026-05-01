@@ -615,22 +615,3 @@ exit
 
 ---
 
-## Key Design Decisions
-
-**Why check PSLVERR before updating the C model state?**
-If the scoreboard updated the C model on every write and then checked PSLVERR, a write to a read-only register would corrupt the model state and produce a false data mismatch on the next read. Checking the error oracle first and skipping the state update on error transactions keeps the golden model always consistent with what the DUT's registers actually contain.
-
-**Why use k-induction rather than plain BMC?**
-Bounded model checking (BMC) only proves properties for the first N cycles. K-induction proves them for all reachable states: if the property holds through step N and is preserved from step N to N+1, it holds forever. The `successful proof by k-induction` result in the second sby run means the properties are not just bug-free for 30 cycles — they are mathematically proven for all time.
-
-**Why did the first formal run fail at step 1?**
-The GPIO STATUS read-only assertion was missing a `f_past_valid` guard. At step 0 (the very first clock edge), `$past(...)` is undefined and the assumptions had not yet constrained the input space, allowing the solver to present an ACCESS-phase write to address 0x10 in the first cycle without a preceding SETUP phase. Wrapping the assertion in `if (f_past_valid && $past(PRESETn) && PRESETn)` ensures it only fires after at least one full clock cycle with valid history, eliminating the spurious counterexample.
-
-**Why separate `apb_combined_dut.sv` from the RTL source?**
-Yosys (used internally by SymbiYosys) requires all modules to be in a single synthesis pass. Flattening the RTL into `apb_combined_dut.sv` avoids multi-file ordering issues with `read_verilog` in the `.sby` script and keeps the formal harness self-contained. The production RTL files under `rtl/` are not modified.
-
-**Why skip TIMER_COUNT and TIMER_STATUS comparisons?**
-The C model has no clock and cannot track the running counter value. Rather than freezing a snapshot at write time — which would only be valid for one cycle — the scoreboard classifies these addresses as "dynamic reads" and logs them as observed without comparing. The timer's counting behavior is a DUT-internal concern verified by the interrupt logic, not by read-back comparisons against a static model.
-
-**Why use `uint32_t mem_model[64]` rather than `uint8_t mem_model[256]`?**
-The APB bus is 32 bits wide and the DUT enforces word-alignment (PSLVERR on unaligned addresses). Using a word array matches the DUT's storage granularity exactly and makes `apply_wstrb()` indexing straightforward: `index = (addr - MEM_BASE) >> 2`.
