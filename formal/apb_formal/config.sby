@@ -1,0 +1,15 @@
+[options]
+mode prove
+depth 30
+
+[engines]
+smtbmc boolector
+
+[script]
+read_verilog -formal -sv apb_combined_dut.sv
+read_verilog -formal -sv apb_formal_top.sv
+prep -top apb_formal_top
+
+[files]
+formal/apb_combined_dut.sv
+formal/apb_formal_top.sv

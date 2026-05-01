@@ -1,0 +1,149 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.64+174 (git sha1 18b832247-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Found 0 SCCs in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Found 0 SCCs in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Found 0 SCCs in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+Found 0 SCCs in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Found 0 SCCs in module apb_formal_top.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2004 ($adff): ARST=\PRESETn, D=$0\mem[0][31:0], Q=\mem[0]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2009 ($adff): ARST=\PRESETn, D=$0\mem[1][31:0], Q=\mem[1]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2014 ($adff): ARST=\PRESETn, D=$0\mem[2][31:0], Q=\mem[2]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2019 ($adff): ARST=\PRESETn, D=$0\mem[3][31:0], Q=\mem[3]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2024 ($adff): ARST=\PRESETn, D=$0\mem[4][31:0], Q=\mem[4]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2029 ($adff): ARST=\PRESETn, D=$0\mem[5][31:0], Q=\mem[5]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2034 ($adff): ARST=\PRESETn, D=$0\mem[6][31:0], Q=\mem[6]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2039 ($adff): ARST=\PRESETn, D=$0\mem[7][31:0], Q=\mem[7]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2044 ($adff): ARST=\PRESETn, D=$0\mem[8][31:0], Q=\mem[8]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2049 ($adff): ARST=\PRESETn, D=$0\mem[9][31:0], Q=\mem[9]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2054 ($adff): ARST=\PRESETn, D=$0\mem[10][31:0], Q=\mem[10]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2059 ($adff): ARST=\PRESETn, D=$0\mem[11][31:0], Q=\mem[11]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2064 ($adff): ARST=\PRESETn, D=$0\mem[12][31:0], Q=\mem[12]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2069 ($adff): ARST=\PRESETn, D=$0\mem[13][31:0], Q=\mem[13]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2074 ($adff): ARST=\PRESETn, D=$0\mem[14][31:0], Q=\mem[14]
+Replacing $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procdff$2079 ($adff): ARST=\PRESETn, D=$0\mem[15][31:0], Q=\mem[15]
+Replacing $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$procdff$1969 ($adff): ARST=\PRESETn, D=$0\gpio_out[7:0], Q=\gpio_out
+Replacing $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$procdff$1974 ($adff): ARST=\PRESETn, D=$0\gpio_dir[7:0], Q=\gpio_dir
+Replacing $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$procdff$1979 ($adff): ARST=\PRESETn, D=$0\timer_ctrl[31:0], Q=\timer_ctrl
+Replacing $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$procdff$1984 ($adff): ARST=\PRESETn, D=$0\timer_load[31:0], Q=\timer_load
+Replacing $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$procdff$1989 ($adff): ARST=\PRESETn, D=$0\timer_count[31:0], Q=\timer_count
+Replacing $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$procdff$1994 ($adff): ARST=\PRESETn, D={ \timer_status [31:2] $0\timer_status[31:0] [1:0] }, Q=\timer_status
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+Finding unused cells or wires in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+Finding unused cells or wires in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+Finding unused cells or wires in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+Finding unused cells or wires in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+Finding unused cells or wires in module \apb_formal_top..
+Removed 132 unused cells and 132 unused wires.
+<suppressed ~133 debug messages>
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+Finding unused cells or wires in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+Finding unused cells or wires in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+Finding unused cells or wires in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+Finding unused cells or wires in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+Finding unused cells or wires in module \apb_formal_top..
+Removed 23 unused cells and 23 unused wires.
+<suppressed ~27 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder...
+Checking module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory...
+Checking module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio...
+Checking module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem...
+Checking module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer...
+Checking module apb_formal_top...
+Found and reported 0 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Optimizing module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+<suppressed ~1 debug messages>
+Optimizing module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Optimizing module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+Optimizing module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Optimizing module apb_formal_top.
+<suppressed ~2 debug messages>
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Computing hashes of 32 cells of `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding duplicate cells in `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding identical cells in module `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Computing hashes of 118 cells of `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Finding duplicate cells in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Finding identical cells in module `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Computing hashes of 48 cells of `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding duplicate cells in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding identical cells in module `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Computing hashes of 4 cells of `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding duplicate cells in `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding identical cells in module `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Computing hashes of 61 cells of `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding duplicate cells in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding identical cells in module `\apb_formal_top'.
+Computing hashes of 158 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+Computing hashes of 152 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+Finding unused cells or wires in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+Finding unused cells or wires in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+Finding unused cells or wires in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+Finding unused cells or wires in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+Finding unused cells or wires in module \apb_formal_top..
+Removed 14 unused cells and 36 unused wires.
+<suppressed ~31 debug messages>
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+Finding unused cells or wires in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+Finding unused cells or wires in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+Finding unused cells or wires in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+Finding unused cells or wires in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+Finding unused cells or wires in module \apb_formal_top..
+Removed 0 unused cells and 42 unused wires.
+<suppressed ~4 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+End of script. Logfile hash: c90f8639e0, time: 0.03s, user: 0.03s, system: 0.00s, MEM: 20.90 MB peak
+Yosys 0.64+174 (git sha1 18b832247-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 37% 4x opt_clean (0 sec), 16% 1x check (0 sec), ...

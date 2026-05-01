@@ -1,0 +1,9 @@
+# running in formal/apb_formal/src/
+read_verilog -formal -sv apb_combined_dut.sv
+read_verilog -formal -sv apb_formal_top.sv
+prep -top apb_formal_top
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

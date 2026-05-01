@@ -1,0 +1,1261 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.64+174 (git sha1 18b832247-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: apb_combined_dut.sv
+Parsing formal SystemVerilog input from `apb_combined_dut.sv' to AST representation.
+Generating RTLIL representation for module `\apb_decoder'.
+Generating RTLIL representation for module `\apb_gpio'.
+Generating RTLIL representation for module `\apb_timer'.
+Generating RTLIL representation for module `\apb_memory'.
+Warning: Replacing memory \mem with list of registers. See apb_combined_dut.sv:529
+Generating RTLIL representation for module `\apb_subsystem'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: apb_formal_top.sv
+Parsing formal SystemVerilog input from `apb_formal_top.sv' to AST representation.
+Generating RTLIL representation for module `\apb_formal_top'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1.1. Analyzing design hierarchy..
+Top module:  \apb_formal_top
+Used module:     \apb_subsystem
+Used module:         \apb_memory
+Used module:         \apb_timer
+Used module:         \apb_gpio
+Used module:         \apb_decoder
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Parameter \MEM_DEPTH = 256
+
+3.1.2. Executing AST frontend in derive mode using pre-parsed AST for module `\apb_memory'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Parameter \MEM_DEPTH = 256
+Generating RTLIL representation for module `$paramod$21248e0ad34a0d35aae9616c63df968cfb585c6d\apb_memory'.
+Warning: Replacing memory \mem with list of registers. See apb_combined_dut.sv:529
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+
+3.1.3. Executing AST frontend in derive mode using pre-parsed AST for module `\apb_timer'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Generating RTLIL representation for module `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Parameter \GPIO_WIDTH = 8
+
+3.1.4. Executing AST frontend in derive mode using pre-parsed AST for module `\apb_gpio'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Parameter \GPIO_WIDTH = 8
+Generating RTLIL representation for module `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+
+3.1.5. Executing AST frontend in derive mode using pre-parsed AST for module `\apb_decoder'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Generating RTLIL representation for module `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Parameter \GPIO_WIDTH = 8
+Parameter \MEM_DEPTH = 16
+
+3.1.6. Executing AST frontend in derive mode using pre-parsed AST for module `\apb_subsystem'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Parameter \GPIO_WIDTH = 8
+Parameter \MEM_DEPTH = 16
+Generating RTLIL representation for module `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+
+3.1.7. Analyzing design hierarchy..
+Top module:  \apb_formal_top
+Used module:     $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+Used module:         \apb_memory
+Used module:         \apb_timer
+Used module:         \apb_gpio
+Used module:         \apb_decoder
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Parameter \MEM_DEPTH = 16
+
+3.1.8. Executing AST frontend in derive mode using pre-parsed AST for module `\apb_memory'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Parameter \MEM_DEPTH = 16
+Generating RTLIL representation for module `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Warning: Replacing memory \mem with list of registers. See apb_combined_dut.sv:529
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Found cached RTLIL representation for module `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Parameter \STRB_WIDTH = 4
+Parameter \GPIO_WIDTH = 8
+Found cached RTLIL representation for module `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Parameter \ADDR_WIDTH = 32
+Parameter \DATA_WIDTH = 32
+Found cached RTLIL representation for module `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+
+3.1.9. Analyzing design hierarchy..
+Top module:  \apb_formal_top
+Used module:     $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+Used module:         $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+Used module:         $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+Used module:         $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+Used module:         $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+
+3.1.10. Analyzing design hierarchy..
+Top module:  \apb_formal_top
+Used module:     $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+Used module:         $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+Used module:         $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+Used module:         $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+Used module:         $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+Removing unused module `$paramod$21248e0ad34a0d35aae9616c63df968cfb585c6d\apb_memory'.
+Removing unused module `\apb_subsystem'.
+Removing unused module `\apb_memory'.
+Removing unused module `\apb_timer'.
+Removing unused module `\apb_gpio'.
+Removing unused module `\apb_decoder'.
+Removed 6 unused modules.
+Module apb_formal_top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3.2. Executing PROC pass (convert processes to netlists).
+
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$apb_formal_top.sv:72$253 in module apb_formal_top.
+Marked 4 switch rules as full_case in process $proc$apb_combined_dut.sv:62$648 in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Marked 4 switch rules as full_case in process $proc$apb_combined_dut.sv:40$638 in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Marked 4 switch rules as full_case in process $proc$apb_combined_dut.sv:174$628 in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Marked 4 switch rules as full_case in process $proc$apb_combined_dut.sv:173$618 in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Marked 4 switch rules as full_case in process $proc$apb_combined_dut.sv:172$607 in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Marked 4 switch rules as full_case in process $proc$apb_combined_dut.sv:171$596 in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Marked 3 switch rules as full_case in process $proc$apb_combined_dut.sv:258$593 in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Marked 1 switch rules as full_case in process $proc$apb_combined_dut.sv:226$590 in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Marked 1 switch rules as full_case in process $proc$apb_combined_dut.sv:184$583 in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Marked 3 switch rules as full_case in process $proc$apb_combined_dut.sv:439$566 in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Marked 15 switch rules as full_case in process $proc$apb_combined_dut.sv:352$487 in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Marked 1 switch rules as full_case in process $proc$apb_combined_dut.sv:547$705 in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Removed 1 dead cases from process $proc$apb_combined_dut.sv:539$697 in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Marked 2 switch rules as full_case in process $proc$apb_combined_dut.sv:539$697 in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Removed 1 dead cases from process $proc$apb_combined_dut.sv:526$661 in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Marked 8 switch rules as full_case in process $proc$apb_combined_dut.sv:526$661 in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Marked 2 switch rules as full_case in process $proc$apb_combined_dut.sv:500$658 in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Removed a total of 2 dead cases.
+
+3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 107 assignments to connections.
+
+3.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\apb_formal_top.$proc$apb_formal_top.sv:30$415'.
+  Set init value: \f_past_valid = 1'0
+
+3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \PRESETn in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:184$583'.
+Found async reset \PRESETn in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:352$487'.
+Found async reset \PRESETn in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+
+3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~90 debug messages>
+
+3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:32$416'.
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:30$415'.
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:286$390'.
+     1/5: $cover$apb_formal_top.sv:292$412_EN
+     2/5: $cover$apb_formal_top.sv:291$407_EN
+     3/5: $cover$apb_formal_top.sv:290$402_EN
+     4/5: $cover$apb_formal_top.sv:289$396_EN
+     5/5: $cover$apb_formal_top.sv:288$391_EN
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:270$380'.
+     1/1: $assert$apb_formal_top.sv:277$388_EN
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:255$373'.
+     1/1: $assert$apb_formal_top.sv:262$378_EN
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:225$343'.
+     1/3: $assert$apb_formal_top.sv:247$359_EN
+     2/3: $assert$apb_formal_top.sv:241$353_EN
+     3/3: $assert$apb_formal_top.sv:233$351_EN
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:210$324'.
+     1/2: $assert$apb_formal_top.sv:217$341_EN
+     2/2: $assert$apb_formal_top.sv:216$339_EN
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:143$321'.
+     1/1: $assert$apb_formal_top.sv:147$322_EN
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:132$313'.
+     1/3: $assert$apb_formal_top.sv:136$319_EN
+     2/3: $assert$apb_formal_top.sv:135$317_EN
+     3/3: $assert$apb_formal_top.sv:134$315_EN
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+     1/15: $assume$apb_formal_top.sv:123$304_EN
+     2/15: $assume$apb_formal_top.sv:118$302_EN
+     3/15: $assume$apb_formal_top.sv:117$300_EN
+     4/15: $assume$apb_formal_top.sv:116$298_EN
+     5/15: $assume$apb_formal_top.sv:115$296_EN
+     6/15: $assume$apb_formal_top.sv:114$294_EN
+     7/15: $assume$apb_formal_top.sv:113$292_EN
+     8/15: $assume$apb_formal_top.sv:108$290_EN
+     9/15: $assume$apb_formal_top.sv:107$288_EN
+    10/15: $assume$apb_formal_top.sv:106$286_EN
+    11/15: $assume$apb_formal_top.sv:105$284_EN
+    12/15: $assume$apb_formal_top.sv:104$282_EN
+    13/15: $assume$apb_formal_top.sv:101$280_EN
+    14/15: $assume$apb_formal_top.sv:94$276_EN
+    15/15: $assume$apb_formal_top.sv:90$274_EN
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:72$253'.
+     1/2: $assume$apb_formal_top.sv:77$257_EN
+     2/2: $assume$apb_formal_top.sv:74$255_EN
+Creating decoders for process `\apb_formal_top.$proc$apb_formal_top.sv:37$252'.
+Creating decoders for process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:62$648'.
+     1/12: $4\PSLVERR[0:0]
+     2/12: $4\PRDATA[31:0]
+     3/12: $4\PREADY[0:0]
+     4/12: $3\PSLVERR[0:0]
+     5/12: $3\PRDATA[31:0]
+     6/12: $3\PREADY[0:0]
+     7/12: $2\PSLVERR[0:0]
+     8/12: $2\PRDATA[31:0]
+     9/12: $2\PREADY[0:0]
+    10/12: $1\PSLVERR[0:0]
+    11/12: $1\PRDATA[31:0]
+    12/12: $1\PREADY[0:0]
+Creating decoders for process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:40$638'.
+     1/13: $4\mem_psel[0:0]
+     2/13: $4\invalid_psel[0:0]
+     3/13: $3\timer_psel[0:0]
+     4/13: $3\invalid_psel[0:0]
+     5/13: $3\mem_psel[0:0]
+     6/13: $2\gpio_psel[0:0]
+     7/13: $2\invalid_psel[0:0]
+     8/13: $2\mem_psel[0:0]
+     9/13: $2\timer_psel[0:0]
+    10/13: $1\invalid_psel[0:0]
+    11/13: $1\mem_psel[0:0]
+    12/13: $1\timer_psel[0:0]
+    13/13: $1\gpio_psel[0:0]
+Creating decoders for process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:174$628'.
+     1/4: $4\apply_wstrb$func$apb_combined_dut.sv:174$576.$result[31:24]$637
+     2/4: $3\apply_wstrb$func$apb_combined_dut.sv:174$576.$result[23:16]$636
+     3/4: $2\apply_wstrb$func$apb_combined_dut.sv:174$576.$result[15:8]$635
+     4/4: $1\apply_wstrb$func$apb_combined_dut.sv:174$576.$result[7:0]$634
+Creating decoders for process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:173$618'.
+     1/4: $4\apply_wstrb$func$apb_combined_dut.sv:173$575.$result[31:24]$627
+     2/4: $3\apply_wstrb$func$apb_combined_dut.sv:173$575.$result[23:16]$626
+     3/4: $2\apply_wstrb$func$apb_combined_dut.sv:173$575.$result[15:8]$625
+     4/4: $1\apply_wstrb$func$apb_combined_dut.sv:173$575.$result[7:0]$624
+Creating decoders for process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:172$607'.
+     1/4: $4\apply_wstrb$func$apb_combined_dut.sv:172$574.$result[31:24]$617
+     2/4: $3\apply_wstrb$func$apb_combined_dut.sv:172$574.$result[23:16]$616
+     3/4: $2\apply_wstrb$func$apb_combined_dut.sv:172$574.$result[15:8]$615
+     4/4: $1\apply_wstrb$func$apb_combined_dut.sv:172$574.$result[7:0]$614
+Creating decoders for process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:171$596'.
+     1/4: $4\apply_wstrb$func$apb_combined_dut.sv:171$573.$result[31:24]$606
+     2/4: $3\apply_wstrb$func$apb_combined_dut.sv:171$573.$result[23:16]$605
+     3/4: $2\apply_wstrb$func$apb_combined_dut.sv:171$573.$result[15:8]$604
+     4/4: $1\apply_wstrb$func$apb_combined_dut.sv:171$573.$result[7:0]$603
+Creating decoders for process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:258$593'.
+     1/3: $3\PSLVERR[0:0]
+     2/3: $2\PSLVERR[0:0]
+     3/3: $1\PSLVERR[0:0]
+Creating decoders for process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:226$590'.
+     1/3: $2\PRDATA[31:0] [31:8]
+     2/3: $2\PRDATA[31:0] [7:0]
+     3/3: $1\PRDATA[31:0]
+Creating decoders for process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:184$583'.
+     1/2: $0\gpio_dir[7:0]
+     2/2: $0\gpio_out[7:0]
+Creating decoders for process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:176$582'.
+Creating decoders for process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:135$581'.
+     1/1: $1\invalid_addr[0:0]
+Creating decoders for process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:439$566'.
+     1/3: $3\PSLVERR[0:0]
+     2/3: $2\PSLVERR[0:0]
+     3/3: $1\PSLVERR[0:0]
+Creating decoders for process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:409$565'.
+     1/1: $1\PRDATA[31:0]
+Creating decoders for process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:352$487'.
+     1/72: $3\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[31:0]$548 [31:24]
+     2/72: $6\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[23:16]$563
+     3/72: $5\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[15:8]$562
+     4/72: $4\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[7:0]$561
+     5/72: $3\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[31:0]$548 [7:0]
+     6/72: $3\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[31:0]$543 [31:24]
+     7/72: $3\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[31:0]$543 [23:16]
+     8/72: $3\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[31:0]$543 [15:8]
+     9/72: $6\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[23:16]$559
+    10/72: $5\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[15:8]$558
+    11/72: $4\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[7:0]$557
+    12/72: $3\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[31:0]$538 [31:24]
+    13/72: $3\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[31:0]$538 [23:16]
+    14/72: $3\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[31:0]$538 [15:8]
+    15/72: $3\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[31:0]$538 [7:0]
+    16/72: $6\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[23:16]$555
+    17/72: $5\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[15:8]$554
+    18/72: $4\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[7:0]$553
+    19/72: $3\apply_wstrb$func$apb_combined_dut.sv:376$479.i[31:0]$542
+    20/72: $3\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[31:0]$548 [15:8]
+    21/72: $7\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[31:24]$564
+    22/72: $7\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[31:24]$560
+    23/72: $7\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[31:24]$556
+    24/72: $3\apply_wstrb$func$apb_combined_dut.sv:376$479.strb[3:0]$541
+    25/72: $3\apply_wstrb$func$apb_combined_dut.sv:376$479.new_data[31:0]$540
+    26/72: $3\apply_wstrb$func$apb_combined_dut.sv:376$479.old_data[31:0]$539
+    27/72: $3\apply_wstrb$func$apb_combined_dut.sv:384$481.i[31:0]$552
+    28/72: $3\apply_wstrb$func$apb_combined_dut.sv:384$481.strb[3:0]$551
+    29/72: $3\apply_wstrb$func$apb_combined_dut.sv:384$481.new_data[31:0]$550
+    30/72: $3\apply_wstrb$func$apb_combined_dut.sv:384$481.old_data[31:0]$549
+    31/72: $3\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[31:0]$543 [7:0]
+    32/72: $3\apply_wstrb$func$apb_combined_dut.sv:380$480.i[31:0]$547
+    33/72: $3\apply_wstrb$func$apb_combined_dut.sv:380$480.strb[3:0]$546
+    34/72: $3\apply_wstrb$func$apb_combined_dut.sv:380$480.new_data[31:0]$545
+    35/72: $3\apply_wstrb$func$apb_combined_dut.sv:380$480.old_data[31:0]$544
+    36/72: $3\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[31:0]$548 [23:16]
+    37/72: $2\apply_wstrb$func$apb_combined_dut.sv:384$481.i[31:0]$537
+    38/72: $2\apply_wstrb$func$apb_combined_dut.sv:384$481.strb[3:0]$536
+    39/72: $2\apply_wstrb$func$apb_combined_dut.sv:384$481.new_data[31:0]$535
+    40/72: $2\apply_wstrb$func$apb_combined_dut.sv:384$481.old_data[31:0]$534
+    41/72: $2\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[31:0]$533
+    42/72: $2\apply_wstrb$func$apb_combined_dut.sv:380$480.i[31:0]$532
+    43/72: $2\apply_wstrb$func$apb_combined_dut.sv:380$480.strb[3:0]$531
+    44/72: $2\apply_wstrb$func$apb_combined_dut.sv:380$480.new_data[31:0]$530
+    45/72: $2\apply_wstrb$func$apb_combined_dut.sv:380$480.old_data[31:0]$529
+    46/72: $2\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[31:0]$528
+    47/72: $2\apply_wstrb$func$apb_combined_dut.sv:376$479.i[31:0]$527
+    48/72: $2\apply_wstrb$func$apb_combined_dut.sv:376$479.strb[3:0]$526
+    49/72: $2\apply_wstrb$func$apb_combined_dut.sv:376$479.new_data[31:0]$525
+    50/72: $2\apply_wstrb$func$apb_combined_dut.sv:376$479.old_data[31:0]$524
+    51/72: $2\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[31:0]$523
+    52/72: $0\timer_status[31:0] [31:2]
+    53/72: $0\timer_status[31:0] [1]
+    54/72: $0\timer_status[31:0] [0]
+    55/72: $1\apply_wstrb$func$apb_combined_dut.sv:384$481.strb[3:0]$517
+    56/72: $1\apply_wstrb$func$apb_combined_dut.sv:384$481.new_data[31:0]$516
+    57/72: $1\apply_wstrb$func$apb_combined_dut.sv:384$481.old_data[31:0]$515
+    58/72: $1\apply_wstrb$func$apb_combined_dut.sv:384$481.$result[31:0]$514
+    59/72: $1\apply_wstrb$func$apb_combined_dut.sv:380$480.i[31:0]$513
+    60/72: $1\apply_wstrb$func$apb_combined_dut.sv:380$480.strb[3:0]$512
+    61/72: $1\apply_wstrb$func$apb_combined_dut.sv:380$480.new_data[31:0]$511
+    62/72: $1\apply_wstrb$func$apb_combined_dut.sv:380$480.old_data[31:0]$510
+    63/72: $1\apply_wstrb$func$apb_combined_dut.sv:380$480.$result[31:0]$509
+    64/72: $1\apply_wstrb$func$apb_combined_dut.sv:376$479.i[31:0]$508
+    65/72: $1\apply_wstrb$func$apb_combined_dut.sv:376$479.strb[3:0]$507
+    66/72: $1\apply_wstrb$func$apb_combined_dut.sv:376$479.new_data[31:0]$506
+    67/72: $1\apply_wstrb$func$apb_combined_dut.sv:376$479.old_data[31:0]$505
+    68/72: $1\apply_wstrb$func$apb_combined_dut.sv:376$479.$result[31:0]$504
+    69/72: $1\apply_wstrb$func$apb_combined_dut.sv:384$481.i[31:0]$518
+    70/72: $0\timer_count[31:0]
+    71/72: $0\timer_load[31:0]
+    72/72: $0\timer_ctrl[31:0]
+Creating decoders for process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:339$486'.
+     1/1: $1\invalid_addr[0:0]
+Creating decoders for process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:547$705'.
+     1/1: $1\PSLVERR[0:0]
+Creating decoders for process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:539$697'.
+     1/4: $2$mem2reg_rd$\mem$apb_combined_dut.sv:543$652_DATA[31:0]$704
+     2/4: $1\PRDATA[31:0]
+     3/4: $1$mem2reg_rd$\mem$apb_combined_dut.sv:543$652_DATA[31:0]$703
+     4/4: $1$mem2reg_rd$\mem$apb_combined_dut.sv:543$652_ADDR[3:0]$702
+Creating decoders for process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+     1/43: $2\apply_wstrb$func$apb_combined_dut.sv:534$649.$result[31:0]$683 [31:24]
+     2/43: $5\apply_wstrb$func$apb_combined_dut.sv:534$649.$result[23:16]$695
+     3/43: $4\apply_wstrb$func$apb_combined_dut.sv:534$649.$result[15:8]$694
+     4/43: $3\apply_wstrb$func$apb_combined_dut.sv:534$649.$result[7:0]$693
+     5/43: $3$mem2reg_rd$\mem$apb_combined_dut.sv:534$650_DATA[31:0]$692
+     6/43: $2$mem2reg_wr$\mem$apb_combined_dut.sv:534$651_ADDR[3:0]$690
+     7/43: $2$mem2reg_wr$\mem$apb_combined_dut.sv:534$651_DATA[31:0]$691
+     8/43: $2\apply_wstrb$func$apb_combined_dut.sv:534$649.j[31:0]$687
+     9/43: $2\apply_wstrb$func$apb_combined_dut.sv:534$649.$result[31:0]$683 [23:16]
+    10/43: $2\apply_wstrb$func$apb_combined_dut.sv:534$649.$result[31:0]$683 [15:8]
+    11/43: $2\apply_wstrb$func$apb_combined_dut.sv:534$649.$result[31:0]$683 [7:0]
+    12/43: $6\apply_wstrb$func$apb_combined_dut.sv:534$649.$result[31:24]$696
+    13/43: $2\apply_wstrb$func$apb_combined_dut.sv:534$649.strb[3:0]$686
+    14/43: $2\apply_wstrb$func$apb_combined_dut.sv:534$649.new_data[31:0]$685
+    15/43: $2\apply_wstrb$func$apb_combined_dut.sv:534$649.old_data[31:0]$684
+    16/43: $2$mem2reg_rd$\mem$apb_combined_dut.sv:534$650_DATA[31:0]$689
+    17/43: $2$mem2reg_rd$\mem$apb_combined_dut.sv:534$650_ADDR[3:0]$688
+    18/43: $1$mem2reg_wr$\mem$apb_combined_dut.sv:534$651_DATA[31:0]$680
+    19/43: $1$mem2reg_wr$\mem$apb_combined_dut.sv:534$651_ADDR[3:0]$679
+    20/43: $1$mem2reg_rd$\mem$apb_combined_dut.sv:534$650_DATA[31:0]$678
+    21/43: $1$mem2reg_rd$\mem$apb_combined_dut.sv:534$650_ADDR[3:0]$677
+    22/43: $1\apply_wstrb$func$apb_combined_dut.sv:534$649.j[31:0]$676
+    23/43: $1\apply_wstrb$func$apb_combined_dut.sv:534$649.strb[3:0]$675
+    24/43: $1\apply_wstrb$func$apb_combined_dut.sv:534$649.new_data[31:0]$674
+    25/43: $1\apply_wstrb$func$apb_combined_dut.sv:534$649.old_data[31:0]$673
+    26/43: $1\apply_wstrb$func$apb_combined_dut.sv:534$649.$result[31:0]$672
+    27/43: $1\i[31:0]
+    28/43: $0\mem[15][31:0]
+    29/43: $0\mem[14][31:0]
+    30/43: $0\mem[13][31:0]
+    31/43: $0\mem[12][31:0]
+    32/43: $0\mem[11][31:0]
+    33/43: $0\mem[10][31:0]
+    34/43: $0\mem[9][31:0]
+    35/43: $0\mem[8][31:0]
+    36/43: $0\mem[7][31:0]
+    37/43: $0\mem[6][31:0]
+    38/43: $0\mem[5][31:0]
+    39/43: $0\mem[4][31:0]
+    40/43: $0\mem[3][31:0]
+    41/43: $0\mem[2][31:0]
+    42/43: $0\mem[1][31:0]
+    43/43: $0\mem[0][31:0]
+Creating decoders for process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:500$658'.
+     1/2: $2\invalid_index[0:0]
+     2/2: $1\invalid_index[0:0]
+
+3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.\PREADY' from process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:62$648'.
+No latch inferred for signal `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.\PRDATA' from process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:62$648'.
+No latch inferred for signal `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.\PSLVERR' from process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:62$648'.
+No latch inferred for signal `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.\gpio_psel' from process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:40$638'.
+No latch inferred for signal `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.\timer_psel' from process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:40$638'.
+No latch inferred for signal `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.\mem_psel' from process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:40$638'.
+No latch inferred for signal `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.\invalid_psel' from process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:40$638'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:174$572.$result' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:174$628'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:174$576.$result' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:174$628'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:174$576.new_data' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:174$628'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:174$576.strb' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:174$628'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:174$576.i' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:174$628'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:173$571.$result' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:173$618'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:173$575.$result' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:173$618'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:173$575.new_data' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:173$618'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:173$575.strb' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:173$618'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:173$575.i' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:173$618'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:172$570.$result' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:172$607'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:172$574.$result' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:172$607'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:172$574.old_data' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:172$607'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:172$574.new_data' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:172$607'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:172$574.strb' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:172$607'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:172$574.i' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:172$607'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:171$569.$result' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:171$596'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:171$573.$result' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:171$596'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:171$573.old_data' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:171$596'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:171$573.new_data' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:171$596'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:171$573.strb' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:171$596'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\apply_wstrb$func$apb_combined_dut.sv:171$573.i' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:171$596'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\PREADY' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:258$593'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\PSLVERR' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:258$593'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\PRDATA' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:226$590'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\gpio_data_full' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:176$582'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\gpio_dir_full' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:176$582'.
+No latch inferred for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\invalid_addr' from process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:135$581'.
+No latch inferred for signal `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.\PREADY' from process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:439$566'.
+No latch inferred for signal `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.\PSLVERR' from process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:439$566'.
+No latch inferred for signal `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.\PRDATA' from process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:409$565'.
+No latch inferred for signal `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.\invalid_addr' from process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:339$486'.
+No latch inferred for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\PREADY' from process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:547$705'.
+No latch inferred for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\PSLVERR' from process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:547$705'.
+No latch inferred for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\PRDATA' from process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:539$697'.
+No latch inferred for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$mem2reg_rd$\mem$apb_combined_dut.sv:543$652_ADDR' from process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:539$697'.
+No latch inferred for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$mem2reg_rd$\mem$apb_combined_dut.sv:543$652_DATA' from process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:539$697'.
+No latch inferred for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\invalid_index' from process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:500$658'.
+
+3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:226$247$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:225$343'.
+  created $dff cell `$procdff$1945' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:229$248$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:225$343'.
+  created $dff cell `$procdff$1946' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:233$249$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:225$343'.
+  created $dff cell `$procdff$1947' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:237$250$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:225$343'.
+  created $dff cell `$procdff$1948' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:241$251$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:225$343'.
+  created $dff cell `$procdff$1949' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:97$233$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1950' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:100$234$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1951' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:104$235$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1952' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:105$236$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1953' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:106$237$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1954' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:107$238$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1955' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:108$239$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1956' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:112$240$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1957' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:114$241$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1958' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:115$242$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1959' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:116$243$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1960' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:117$244$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1961' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:118$245$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1962' with positive edge clock.
+Creating register for signal `\apb_formal_top.$past$apb_formal_top.sv:122$246$0' using process `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+  created $dff cell `$procdff$1963' with positive edge clock.
+Creating register for signal `\apb_formal_top.\f_past_valid' using process `\apb_formal_top.$proc$apb_formal_top.sv:37$252'.
+  created $dff cell `$procdff$1964' with positive edge clock.
+Creating register for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\gpio_out' using process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:184$583'.
+  created $adff cell `$procdff$1969' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.\gpio_dir' using process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:184$583'.
+  created $adff cell `$procdff$1974' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.\timer_ctrl' using process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:352$487'.
+  created $adff cell `$procdff$1979' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.\timer_load' using process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:352$487'.
+  created $adff cell `$procdff$1984' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.\timer_count' using process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:352$487'.
+  created $adff cell `$procdff$1989' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.\timer_status' using process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:352$487'.
+  created $adff cell `$procdff$1994' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\i' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$1999' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[0]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2004' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[1]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2009' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[2]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2014' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[3]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2019' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[4]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2024' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[5]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2029' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[6]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2034' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[7]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2039' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[8]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2044' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[9]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2049' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[10]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2054' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[11]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2059' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[12]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2064' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[13]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2069' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[14]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2074' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.\mem[15]' using process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+  created $adff cell `$procdff$2079' with positive edge clock and positive level reset.
+
+3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:32$416'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:30$415'.
+Found and cleaned up 1 empty switch in `\apb_formal_top.$proc$apb_formal_top.sv:286$390'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:286$390'.
+Found and cleaned up 2 empty switches in `\apb_formal_top.$proc$apb_formal_top.sv:270$380'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:270$380'.
+Found and cleaned up 2 empty switches in `\apb_formal_top.$proc$apb_formal_top.sv:255$373'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:255$373'.
+Found and cleaned up 4 empty switches in `\apb_formal_top.$proc$apb_formal_top.sv:225$343'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:225$343'.
+Found and cleaned up 2 empty switches in `\apb_formal_top.$proc$apb_formal_top.sv:210$324'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:210$324'.
+Found and cleaned up 1 empty switch in `\apb_formal_top.$proc$apb_formal_top.sv:143$321'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:143$321'.
+Found and cleaned up 1 empty switch in `\apb_formal_top.$proc$apb_formal_top.sv:132$313'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:132$313'.
+Found and cleaned up 7 empty switches in `\apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:85$259'.
+Found and cleaned up 1 empty switch in `\apb_formal_top.$proc$apb_formal_top.sv:72$253'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:72$253'.
+Removing empty process `apb_formal_top.$proc$apb_formal_top.sv:37$252'.
+Found and cleaned up 4 empty switches in `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:62$648'.
+Removing empty process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:62$648'.
+Found and cleaned up 4 empty switches in `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:40$638'.
+Removing empty process `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$proc$apb_combined_dut.sv:40$638'.
+Found and cleaned up 4 empty switches in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:174$628'.
+Removing empty process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:174$628'.
+Found and cleaned up 4 empty switches in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:173$618'.
+Removing empty process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:173$618'.
+Found and cleaned up 4 empty switches in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:172$607'.
+Removing empty process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:172$607'.
+Found and cleaned up 4 empty switches in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:171$596'.
+Removing empty process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:171$596'.
+Found and cleaned up 3 empty switches in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:258$593'.
+Removing empty process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:258$593'.
+Found and cleaned up 2 empty switches in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:226$590'.
+Removing empty process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:226$590'.
+Found and cleaned up 2 empty switches in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:184$583'.
+Removing empty process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:184$583'.
+Removing empty process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:176$582'.
+Found and cleaned up 1 empty switch in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:135$581'.
+Removing empty process `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$proc$apb_combined_dut.sv:135$581'.
+Found and cleaned up 3 empty switches in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:439$566'.
+Removing empty process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:439$566'.
+Found and cleaned up 1 empty switch in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:409$565'.
+Removing empty process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:409$565'.
+Found and cleaned up 20 empty switches in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:352$487'.
+Removing empty process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:352$487'.
+Found and cleaned up 1 empty switch in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:339$486'.
+Removing empty process `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$proc$apb_combined_dut.sv:339$486'.
+Found and cleaned up 1 empty switch in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:547$705'.
+Removing empty process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:547$705'.
+Found and cleaned up 2 empty switches in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:539$697'.
+Removing empty process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:539$697'.
+Found and cleaned up 7 empty switches in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+Removing empty process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:526$661'.
+Found and cleaned up 2 empty switches in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:500$658'.
+Removing empty process `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$proc$apb_combined_dut.sv:500$658'.
+Cleaned up 90 empty switches.
+
+3.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module apb_formal_top.
+<suppressed ~25 debug messages>
+Optimizing module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+Optimizing module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Optimizing module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+<suppressed ~11 debug messages>
+Optimizing module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+<suppressed ~26 debug messages>
+Optimizing module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+<suppressed ~38 debug messages>
+
+3.3. Executing FUTURE pass.
+
+3.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module apb_formal_top.
+Optimizing module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+Optimizing module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Optimizing module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Optimizing module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Optimizing module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+
+3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \apb_formal_top..
+Finding unused cells or wires in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+Finding unused cells or wires in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+Finding unused cells or wires in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+Finding unused cells or wires in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+Finding unused cells or wires in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+Removed 148 unused cells and 814 unused wires.
+<suppressed ~173 debug messages>
+
+3.6. Executing CHECK pass (checking for obvious problems).
+Checking module apb_formal_top...
+Checking module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem...
+Checking module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder...
+Checking module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio...
+Checking module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer...
+Checking module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory...
+Found and reported 0 problems.
+
+3.7. Executing OPT pass (performing simple optimizations).
+
+3.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module apb_formal_top.
+Optimizing module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+Optimizing module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Optimizing module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Optimizing module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Optimizing module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+
+3.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\apb_formal_top'.
+Computing hashes of 217 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+Computing hashes of 197 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+Computing hashes of 189 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+Computing hashes of 188 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+<suppressed ~87 debug messages>
+Finding identical cells in module `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Computing hashes of 4 cells of `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding duplicate cells in `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding identical cells in module `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Computing hashes of 66 cells of `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding duplicate cells in `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding identical cells in module `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Computing hashes of 44 cells of `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding duplicate cells in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Computing hashes of 36 cells of `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding duplicate cells in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+<suppressed ~24 debug messages>
+Finding identical cells in module `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Computing hashes of 102 cells of `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding duplicate cells in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Computing hashes of 80 cells of `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding duplicate cells in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+<suppressed ~66 debug messages>
+Finding identical cells in module `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Computing hashes of 125 cells of `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Finding duplicate cells in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Computing hashes of 92 cells of `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Finding duplicate cells in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+<suppressed ~99 debug messages>
+Removed a total of 92 cells.
+
+3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \apb_formal_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1006.
+    dead port 2/2 on $mux $procmux$1000.
+    dead port 2/2 on $mux $procmux$994.
+    dead port 2/2 on $mux $procmux$988.
+    dead port 2/2 on $mux $procmux$982.
+    dead port 1/2 on $mux $procmux$980.
+    dead port 2/2 on $mux $procmux$973.
+    dead port 1/2 on $mux $procmux$971.
+    dead port 2/2 on $mux $procmux$964.
+    dead port 1/2 on $mux $procmux$962.
+    dead port 2/2 on $mux $procmux$955.
+    dead port 1/2 on $mux $procmux$953.
+    dead port 1/2 on $mux $procmux$950.
+    dead port 2/2 on $mux $procmux$943.
+    dead port 1/2 on $mux $procmux$941.
+    dead port 1/2 on $mux $procmux$938.
+    dead port 1/2 on $mux $procmux$922.
+    dead port 1/2 on $mux $procmux$916.
+    dead port 1/2 on $mux $procmux$910.
+    dead port 1/2 on $mux $procmux$904.
+    dead port 1/2 on $mux $procmux$901.
+    dead port 1/2 on $mux $procmux$895.
+    dead port 1/2 on $mux $procmux$892.
+    dead port 1/2 on $mux $procmux$886.
+    dead port 1/2 on $mux $procmux$883.
+    dead port 1/2 on $mux $procmux$877.
+    dead port 1/2 on $mux $procmux$874.
+    dead port 1/2 on $mux $procmux$871.
+    dead port 1/2 on $mux $procmux$866.
+    dead port 1/2 on $mux $procmux$863.
+    dead port 1/2 on $mux $procmux$860.
+    dead port 1/2 on $mux $procmux$855.
+    dead port 1/2 on $mux $procmux$852.
+    dead port 1/2 on $mux $procmux$849.
+Running muxtree optimizer on module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1081.
+    dead port 2/2 on $mux $procmux$1075.
+    dead port 2/2 on $mux $procmux$1073.
+    dead port 2/2 on $mux $procmux$1101.
+    dead port 2/2 on $mux $procmux$1093.
+Running muxtree optimizer on module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1324.
+    dead port 2/2 on $mux $procmux$1313.
+    dead port 2/2 on $mux $procmux$1311.
+    dead port 2/2 on $mux $procmux$1380.
+    dead port 2/2 on $mux $procmux$1378.
+    dead port 2/2 on $mux $procmux$1260.
+    dead port 2/2 on $mux $procmux$1258.
+    dead port 2/2 on $mux $procmux$1248.
+    dead port 2/2 on $mux $procmux$1246.
+    dead port 2/2 on $mux $procmux$1236.
+    dead port 2/2 on $mux $procmux$1234.
+    dead port 2/2 on $mux $procmux$1368.
+    dead port 2/2 on $mux $procmux$1366.
+    dead port 2/2 on $mux $procmux$1189.
+    dead port 2/2 on $mux $procmux$1187.
+    dead port 2/2 on $mux $procmux$1178.
+    dead port 2/2 on $mux $procmux$1176.
+    dead port 2/2 on $mux $procmux$1167.
+    dead port 2/2 on $mux $procmux$1165.
+    dead port 2/2 on $mux $procmux$1393.
+    dead port 2/2 on $mux $procmux$1339.
+    dead port 2/2 on $mux $procmux$1337.
+    dead port 2/2 on $mux $procmux$1391.
+    dead port 2/2 on $mux $procmux$1138.
+    dead port 2/2 on $mux $procmux$1132.
+    dead port 2/2 on $mux $procmux$1130.
+    dead port 2/2 on $mux $procmux$1326.
+Running muxtree optimizer on module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1719.
+    dead port 2/2 on $mux $procmux$1695.
+    dead port 1/2 on $mux $procmux$1940.
+    dead port 17/17 on $pmux $procmux$1678.
+    dead port 2/2 on $mux $procmux$1675.
+    dead port 2/2 on $mux $procmux$1669.
+    dead port 2/2 on $mux $procmux$1663.
+    dead port 2/2 on $mux $procmux$1645.
+Removed 74 multiplexer ports.
+<suppressed ~624 debug messages>
+
+3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \apb_formal_top.
+  Optimizing cells in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+  Optimizing cells in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+  Optimizing cells in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+  Optimizing cells in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+  Optimizing cells in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Performed a total of 0 changes.
+
+3.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\apb_formal_top'.
+Computing hashes of 188 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+Computing hashes of 170 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+Computing hashes of 159 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+Computing hashes of 149 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+<suppressed ~117 debug messages>
+Finding identical cells in module `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Computing hashes of 4 cells of `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding duplicate cells in `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding identical cells in module `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Computing hashes of 32 cells of `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding duplicate cells in `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding identical cells in module `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Computing hashes of 31 cells of `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding duplicate cells in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Computing hashes of 30 cells of `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding duplicate cells in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Computing hashes of 53 cells of `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding duplicate cells in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding identical cells in module `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Computing hashes of 85 cells of `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Finding duplicate cells in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Removed a total of 40 cells.
+
+3.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \apb_formal_top..
+Finding unused cells or wires in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+Finding unused cells or wires in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+Finding unused cells or wires in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+Finding unused cells or wires in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+Finding unused cells or wires in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+Removed 0 unused cells and 195 unused wires.
+<suppressed ~5 debug messages>
+
+3.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module apb_formal_top.
+Optimizing module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+Optimizing module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Optimizing module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Optimizing module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Optimizing module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+
+3.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \apb_formal_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~360 debug messages>
+
+3.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \apb_formal_top.
+  Optimizing cells in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+  Optimizing cells in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+  Optimizing cells in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+  Optimizing cells in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+  Optimizing cells in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Performed a total of 0 changes.
+
+3.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\apb_formal_top'.
+Computing hashes of 149 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+Finding identical cells in module `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Computing hashes of 4 cells of `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding duplicate cells in `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding identical cells in module `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Computing hashes of 32 cells of `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding duplicate cells in `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding identical cells in module `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Computing hashes of 30 cells of `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding duplicate cells in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding identical cells in module `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Computing hashes of 53 cells of `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding duplicate cells in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding identical cells in module `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Computing hashes of 85 cells of `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Finding duplicate cells in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Removed a total of 0 cells.
+
+3.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \apb_formal_top..
+Finding unused cells or wires in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+Finding unused cells or wires in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+Finding unused cells or wires in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+Finding unused cells or wires in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+Finding unused cells or wires in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+
+3.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module apb_formal_top.
+Optimizing module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+Optimizing module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Optimizing module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Optimizing module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Optimizing module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+
+3.7.14. Finished fast OPT passes. (There is nothing left to do.)
+
+3.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell apb_formal_top.$ge$apb_formal_top.sv:213$327 ($ge).
+Removed top 24 bits (of 32) from port B of cell apb_formal_top.$le$apb_formal_top.sv:213$328 ($le).
+Removed top 23 bits (of 32) from port B of cell apb_formal_top.$ge$apb_formal_top.sv:214$330 ($ge).
+Removed top 23 bits (of 32) from port B of cell apb_formal_top.$le$apb_formal_top.sv:214$331 ($le).
+Removed top 27 bits (of 32) from port B of cell apb_formal_top.$eq$apb_formal_top.sv:246$357 ($eq).
+Removed top 29 bits (of 32) from port B of cell apb_formal_top.$eq$apb_formal_top.sv:239$370 ($eq).
+Removed top 23 bits (of 32) from port B of cell apb_formal_top.$eq$apb_formal_top.sv:261$376 ($eq).
+Removed top 22 bits (of 32) from port B of cell apb_formal_top.$ge$apb_formal_top.sv:275$383 ($ge).
+Removed top 22 bits (of 32) from port B of cell apb_formal_top.$le$apb_formal_top.sv:275$384 ($le).
+Removed top 23 bits (of 32) from port B of cell apb_formal_top.$eq$apb_formal_top.sv:290$405 ($eq).
+Removed top 22 bits (of 32) from port B of cell apb_formal_top.$eq$apb_formal_top.sv:291$410 ($eq).
+Removed top 31 bits (of 32) from port B of cell $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$ge$apb_combined_dut.sv:47$639 ($ge).
+Removed top 24 bits (of 32) from port B of cell $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$le$apb_combined_dut.sv:47$640 ($le).
+Removed top 23 bits (of 32) from port B of cell $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$ge$apb_combined_dut.sv:50$642 ($ge).
+Removed top 23 bits (of 32) from port B of cell $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$le$apb_combined_dut.sv:50$643 ($le).
+Removed top 22 bits (of 32) from port B of cell $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$ge$apb_combined_dut.sv:53$645 ($ge).
+Removed top 22 bits (of 32) from port B of cell $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.$le$apb_combined_dut.sv:53$646 ($le).
+Removed top 3 bits (of 8) from port B of cell $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$procmux$1098_CMP0 ($eq).
+Removed top 24 bits (of 32) from mux cell $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$procmux$1104 ($mux).
+Removed top 5 bits (of 8) from port B of cell $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$procmux$1111_CMP0 ($eq).
+Removed top 4 bits (of 8) from port B of cell $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$procmux$1117_CMP0 ($eq).
+Removed top 4 bits (of 8) from port B of cell $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$procmux$1118_CMP0 ($eq).
+Removed top 24 bits (of 32) from wire $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.apply_wstrb$func$apb_combined_dut.sv:172$570.$result.
+Removed top 24 bits (of 32) from wire $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.apply_wstrb$func$apb_combined_dut.sv:171$569.$result.
+Removed top 24 bits (of 32) from wire $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.gpio_clear_wstrb.
+Removed top 24 bits (of 32) from wire $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.gpio_set_wstrb.
+Removed top 24 bits (of 32) from wire $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.gpio_dir_wstrb.
+Removed top 24 bits (of 32) from wire $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.gpio_data_wstrb.
+Removed top 24 bits (of 32) from wire $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.$2\PRDATA[31:0].
+Removed top 4 bits (of 8) from port B of cell $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$procmux$1367_CMP0 ($eq).
+Removed top 5 bits (of 8) from port B of cell $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$procmux$1379_CMP0 ($eq).
+Removed top 3 bits (of 8) from port B of cell $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$procmux$1570_CMP0 ($eq).
+Removed top 4 bits (of 8) from port B of cell $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.$procmux$1623_CMP3 ($eq).
+Removed top 22 bits (of 32) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$sub$apb_combined_dut.sv:497$657 ($sub).
+Removed top 26 bits (of 32) from port Y of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$sub$apb_combined_dut.sv:497$657 ($sub).
+Removed top 26 bits (of 32) from port A of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$sub$apb_combined_dut.sv:497$657 ($sub).
+Removed top 9 bits (of 10) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$sub$apb_combined_dut.sv:497$657 ($sub).
+Removed top 27 bits (of 32) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$ge$apb_combined_dut.sv:506$660 ($ge).
+Removed top 1 bits (of 4) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procmux$1814_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procmux$1828_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procmux$1843_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procmux$1859_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procmux$1876_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procmux$1894_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.$procmux$1913_CMP0 ($eq).
+Removed top 26 bits (of 32) from wire $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.local_addr.
+
+3.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \apb_formal_top..
+Finding unused cells or wires in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+Finding unused cells or wires in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+Finding unused cells or wires in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+Finding unused cells or wires in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+Finding unused cells or wires in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~2 debug messages>
+
+3.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.11. Executing OPT pass (performing simple optimizations).
+
+3.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module apb_formal_top.
+Optimizing module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+Optimizing module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Optimizing module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Optimizing module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Optimizing module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+
+3.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\apb_formal_top'.
+Computing hashes of 149 cells of `\apb_formal_top'.
+Finding duplicate cells in `\apb_formal_top'.
+Finding identical cells in module `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Computing hashes of 4 cells of `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding duplicate cells in `$paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem'.
+Finding identical cells in module `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Computing hashes of 32 cells of `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding duplicate cells in `$paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder'.
+Finding identical cells in module `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Computing hashes of 30 cells of `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding duplicate cells in `$paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio'.
+Finding identical cells in module `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Computing hashes of 53 cells of `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding duplicate cells in `$paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer'.
+Finding identical cells in module `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Computing hashes of 85 cells of `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Finding duplicate cells in `$paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory'.
+Removed a total of 0 cells.
+
+3.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \apb_formal_top..
+Finding unused cells or wires in module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem..
+Finding unused cells or wires in module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder..
+Finding unused cells or wires in module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio..
+Finding unused cells or wires in module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer..
+Finding unused cells or wires in module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory..
+
+3.11.4. Finished fast OPT passes.
+
+3.12. Executing SORT pass.
+
+3.13. Printing statistics.
+
+=== $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       44 wires
+      261 wire bits
+       19 public wires
+      174 public wire bits
+       19 ports
+      174 port bits
+       32 cells
+        3   $ge
+        3   $le
+        3   $logic_and
+       23   $mux
+
+=== $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       96 wires
+     1780 wire bits
+       34 public wires
+      636 public wire bits
+       12 ports
+      110 port bits
+       85 cells
+       16   $adff
+       15   $eq
+        1   $ge
+        6   $logic_and
+        3   $logic_not
+       40   $mux
+        2   $pmux
+        1   $reduce_bool
+        1   $sub
+
+=== $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       61 wires
+      669 wire bits
+       41 public wires
+      593 public wire bits
+       15 ports
+      134 port bits
+       30 cells
+        2   $adff
+        1   $and
+        4   $eq
+        6   $logic_and
+        2   $logic_not
+       10   $mux
+        1   $not
+        1   $or
+        2   $pmux
+        1   $reduce_or
+
+=== $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       29 wires
+      241 wire bits
+       29 public wires
+      241 public wire bits
+       16 ports
+      135 port bits
+        4 submodules
+        1   $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+        1   $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+        1   $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+        1   $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+
+=== $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       66 wires
+      689 wire bits
+       22 public wires
+      251 public wire bits
+       13 ports
+      111 port bits
+       53 cells
+        1   $add
+        4   $adff
+        4   $eq
+        1   $ge
+        4   $logic_and
+        1   $logic_not
+       36   $mux
+        1   $pmux
+        1   $reduce_or
+
+=== apb_formal_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      129 wires
+      396 wire bits
+       17 public wires
+      136 public wire bits
+       10 ports
+       84 port bits
+      148 cells
+       35   $check
+       20   $dff
+       17   $eq
+        3   $ge
+        3   $le
+       28   $logic_and
+        7   $logic_not
+        2   $logic_or
+       29   $mux
+        3   $not
+        1   $reduce_bool
+        1 submodules
+        1   $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      348 apb_formal_top
+       32   $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+       85   $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+       30   $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+       53   $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+
+        +----------Count including submodules.
+        | 
+      425 wires
+     4036 wire bits
+      162 public wires
+     2031 public wire bits
+       85 ports
+      748 port bits
+        - memories
+        - memory bits
+        - processes
+      348 cells
+        1   $add
+       22   $adff
+        1   $and
+       35   $check
+       20   $dff
+       40   $eq
+        8   $ge
+        6   $le
+       47   $logic_and
+       13   $logic_not
+        2   $logic_or
+      138   $mux
+        4   $not
+        1   $or
+        5   $pmux
+        2   $reduce_bool
+        2   $reduce_or
+        1   $sub
+        1 submodules
+        1   $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+
+3.14. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder...
+Checking module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory...
+Checking module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio...
+Checking module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem...
+Checking module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer...
+Checking module apb_formal_top...
+Found and reported 0 problems.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `apb_formal_top'. Setting top module to apb_formal_top.
+
+4.1. Analyzing design hierarchy..
+Top module:  \apb_formal_top
+Used module:     $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+Used module:         $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+Used module:         $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+Used module:         $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+Used module:         $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+
+4.2. Analyzing design hierarchy..
+Top module:  \apb_formal_top
+Used module:     $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+Used module:         $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+Used module:         $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+Used module:         $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+Used module:         $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+Removed 0 unused modules.
+Module apb_formal_top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+5. Executing jny backend.
+
+6. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 1 unique messages, 3 total
+End of script. Logfile hash: 0aac4a601c, time: 0.12s, user: 0.11s, system: 0.01s, MEM: 29.18 MB peak
+Yosys 0.64+174 (git sha1 18b832247-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 31% 4x read_verilog (0 sec), 27% 2x hierarchy (0 sec), ...

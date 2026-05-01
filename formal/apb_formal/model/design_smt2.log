@@ -1,0 +1,229 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.64+174 (git sha1 18b832247-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `apb_formal_top'. Setting top module to apb_formal_top.
+
+2.1. Analyzing design hierarchy..
+Top module:  \apb_formal_top
+Used module:     $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+Used module:         $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+Used module:         $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+Used module:         $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+Used module:         $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+
+2.2. Analyzing design hierarchy..
+Top module:  \apb_formal_top
+Used module:     $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+Used module:         $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+Used module:         $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+Used module:         $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+Used module:         $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+Removed 0 unused modules.
+Module apb_formal_top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       44 wires
+      261 wire bits
+       19 public wires
+      174 public wire bits
+       19 ports
+      174 port bits
+       32 cells
+        3   $ge
+        3   $le
+        3   $logic_and
+       23   $mux
+
+=== $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      130 wires
+     2837 wire bits
+       51 public wires
+     1180 public wire bits
+       12 ports
+      110 port bits
+      119 cells
+       16   $anyinit
+        1   $anyseq
+        1   $assume
+       15   $eq
+        1   $ge
+        6   $logic_and
+        3   $logic_not
+       72   $mux
+        1   $not
+        2   $pmux
+        1   $reduce_bool
+
+=== $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       52 wires
+      366 wire bits
+       29 public wires
+      273 public wire bits
+       15 ports
+      134 port bits
+       36 cells
+        1   $and
+        2   $anyinit
+        1   $assume
+        4   $eq
+        6   $logic_and
+        2   $logic_not
+       14   $mux
+        2   $not
+        1   $or
+        2   $pmux
+        1   $reduce_or
+
+=== $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       29 wires
+      241 wire bits
+       29 public wires
+      241 public wire bits
+       16 ports
+      135 port bits
+        4 submodules
+        1   $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+        1   $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+        1   $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+        1   $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+
+=== $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       75 wires
+      946 wire bits
+       26 public wires
+      379 public wire bits
+       13 ports
+      111 port bits
+       63 cells
+        1   $add
+        4   $anyinit
+        1   $assume
+        4   $eq
+        1   $ge
+        4   $logic_and
+        1   $logic_not
+       44   $mux
+        1   $not
+        1   $pmux
+        1   $reduce_or
+
+=== apb_formal_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      138 wires
+      405 wire bits
+       36 public wires
+      303 public wire bits
+       10 ports
+       84 port bits
+      153 cells
+       19   $anyinit
+       11   $assert
+       20   $assume
+       15   $eq
+       17   $ff
+        3   $ge
+        1   $initstate
+        3   $le
+       22   $logic_and
+        6   $logic_not
+        2   $logic_or
+       29   $mux
+        4   $not
+        1   $reduce_bool
+        1 submodules
+        1   $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+
+=== design hierarchy ===
+
+        +----------Count including submodules.
+        | 
+      403 apb_formal_top
+       32   $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder
+      119   $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory
+       36   $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio
+       63   $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer
+
+        +----------Count including submodules.
+        | 
+      468 wires
+     5056 wire bits
+      190 public wires
+     2550 public wire bits
+       85 ports
+      748 port bits
+        - memories
+        - memory bits
+        - processes
+      403 cells
+        1   $add
+        1   $and
+       41   $anyinit
+        1   $anyseq
+       11   $assert
+       23   $assume
+       38   $eq
+       17   $ff
+        8   $ge
+        1   $initstate
+        6   $le
+       41   $logic_and
+       12   $logic_not
+        2   $logic_or
+      182   $mux
+        8   $not
+        1   $or
+        5   $pmux
+        2   $reduce_bool
+        2   $reduce_or
+        1 submodules
+        1   $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module $paramod$faf5c1a55cf86a4c8da3eb812a8b4a0d7dc7b4d5\apb_timer.
+Creating SMT-LIBv2 representation of module $paramod$c82524a21f237e0a1468409284d934a5b5e16350\apb_gpio.
+Creating SMT-LIBv2 representation of module $paramod$a39240c42f057ce19f611845a682a9b45c11d7a7\apb_memory.
+Creating SMT-LIBv2 representation of module $paramod$73a3980ba8a68177b0617f0f620fd34f6ef3e417\apb_decoder.
+Creating SMT-LIBv2 representation of module $paramod$d27dd34c3b452df0e5cd374c666be5afc431baa8\apb_subsystem.
+Creating SMT-LIBv2 representation of module apb_formal_top.
+
+End of script. Logfile hash: 15796a49fb, time: 0.01s, user: 0.01s, system: 0.00s, MEM: 19.03 MB peak
+Yosys 0.64+174 (git sha1 18b832247-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 78% 2x write_smt2 (0 sec), 11% 2x read_rtlil (0 sec), ...
