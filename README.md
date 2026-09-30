@@ -1,4 +1,4 @@
-# Functional Verification of an APB Subsystem with UVM, RAL, DPI-C Golden Model, SVA Protocol Checker & Formal Verification
+# Functional Verification of an APB Subsystem with UVM, DPI-C Golden Model, SVA Protocol Checker & Formal Verification
 ### UVM · UVM-RAL · SystemVerilog · DPI-C · SVA · Formal Verification (SymbiYosys + Boolector + Ubuntu 22.04) · EDA Playground · Aldec Riviera-PRO
 
 ## Overview
