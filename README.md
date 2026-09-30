@@ -1,5 +1,5 @@
 # Functional Verification of an APB Subsystem with UVM, DPI-C Golden Model, SVA Protocol Checker & Formal Verification
-### UVM · UVM-RAL · SystemVerilog · DPI-C · SVA · Formal Verification (SymbiYosys + Boolector + Ubuntu 22.04) · EDA Playground · Aldec Riviera-PRO
+### UVM · SystemVerilog · DPI-C · SVA · Formal Verification (SymbiYosys + Boolector + Ubuntu 22.04) · EDA Playground · Aldec Riviera-PRO
 
 ## Overview
 
@@ -7,14 +7,11 @@ This project builds a complete **UVM-based functional verification environment**
 
 The DUT is an APB subsystem integrating three peripherals — a GPIO controller, a countdown timer with interrupt, and a 256-byte scratchpad memory — connected through a shared APB decoder. The testbench proves correctness across GPIO bit-manipulation, timer start/stop/interrupt, memory read-write, byte-lane write-strobe masking, PSLVERR error signaling, and the full legal address space.
 
-The environment was further enhanced with a UVM Register Abstraction Layer (RAL) model for the GPIO, timer, and scratchpad memory regions. The RAL model enables frontdoor register access through the existing APB UVM agent, allowing tests to perform register-level read/write operations, reset-value checks, set/clear side-effect validation, volatile timer-register reads, and scratch-memory access using uvm_reg and uvm_mem APIs instead of manually constructing low-level APB transactions.
-
 **What each verification layer adds:**
 
 - **DPI-C golden model** — independently tracks every GPIO register, timer register, and memory word in C++; predicts PSLVERR before the DUT responds; applies byte-lane write-strobe masking correctly; catches any mismatch between DUT behavior and AMBA specification
 - **SVA protocol checker** — eight concurrent assertions enforce APB two-phase protocol, signal stability, X/Z freedom, and PSLVERR timing on every clock edge in simulation
 - **Formal verification** — SymbiYosys k-induction proof over 30 cycles mathematically proves reset behavior, zero-wait-state PREADY, invalid-address PSLVERR, GPIO write-through correctness, GPIO/Timer read-only register error signaling, and memory alignment errors hold for all possible APB input sequences — not just those exercised by the test sequences
-- **UVM RAL model** — models the GPIO register block, timer register block, and scratchpad memory using `uvm_reg_block`, `uvm_reg`, and `uvm_mem`; connects to the existing APB sequencer through a custom `apb_reg_adapter`; enables frontdoor register accesses, mirror-style read checks, reset-value validation, set/clear side-effect testing, volatile timer reads, and memory read/write checks through high-level register APIs.
 
 The verification goal is consistent across all layers:
 
@@ -51,9 +48,7 @@ apb_uvm_dpi_project/
 │       ├── apb_agent.sv       # UVM agent (active): driver + monitor + sequencer
 │       ├── apb_env.sv         # UVM environment: agent + scoreboard + coverage
 │       └── apb_test.sv        # apb_smoke_test and apb_random_test
-|       │── apb_reg_model.sv     # UVM RAL model: GPIO regs, Timer regs, scratch uvm_mem
-|       ├── apb_reg_adapter.sv   # Converts uvm_reg_bus_op <-> apb_transaction
-|       ├── apb_ral_sequence.sv  # RAL smoke sequence: frontdoor reg/mem access checks
+│
 ├── dpi/
 │   ├── apb_c_model.h          # DPI-C header: extern "C" API declarations
 │   └── apb_c_model.cpp        # DPI-C golden model: full C++ implementation
@@ -68,7 +63,6 @@ apb_uvm_dpi_project/
 │   └── run.do                 # Aldec vsim Tcl script
 │
 └── output.txt                 # Captured simulation transcript (500-transaction random run)
-
 ```
 
 ---
@@ -85,15 +79,15 @@ The DUT is a three-peripheral APB subsystem. The `apb_decoder` decodes `PADDR` a
           │                             │
           │  ┌──────────────────────┐   │
           │  │     apb_decoder      │   │
-          │  │  PADDR → PSEL mux   │   │
-          │  │  PRDATA/PREADY mux  │   │
-          │  └────┬───────┬────┬───┘   │
+          │  │  PADDR → PSEL mux    │   │
+          │  │  PRDATA/PREADY mux   │   │
+          │  └────┬───────┬────┬────┘   │
           │       │       │    │        │
-          │  ┌────▼──┐ ┌──▼──┐ ┌▼────┐ │
-          │  │ GPIO  │ │Timer│ │ Mem │ │
-          │  │0x000- │ │0x100│ │0x200│ │
-          │  │ 0x0FF │ │–1FF │ │–2FF │ │
-          │  └───────┘ └─────┘ └─────┘ │
+          │  ┌────▼──┐ ┌──▼──┐ ┌▼────┐  │
+          │  │ GPIO  │ │Timer│ │ Mem │  │
+          │  │0x000- │ │0x100│ │0x200│  │
+          │  │ 0x0FF │ │–1FF │ │–2FF │  │
+          │  └───────┘ └─────┘ └─────┘  │
           └─────────────────────────────┘
 ```
 
@@ -143,7 +137,7 @@ The C++ model (`apb_c_model.cpp`) is compiled into a shared object (`apb_c_model
 ### DPI-C API
 
 | Function | Called from | Purpose |
-|----------|-------------|---------| 
+|----------|-------------|---------|
 | `apb_c_reset()` | `build_phase` | Zero all register shadows and memory array |
 | `apb_c_slverr(addr, is_write)` | `write()` — every transaction | Predict whether PSLVERR should be asserted; checked before any state update |
 | `apb_c_write(addr, data, strb)` | `write()` on WRITE, only if `!slverr` | Apply `apply_wstrb()` byte masking and update the relevant register shadow |
@@ -183,7 +177,7 @@ for (int i = 0; i < 4; i++) {
 
 ## How the Scoreboard Uses the DPI
 
-The scoreboard's `write()` function follows a five-step decision tree to avoid false failures:
+The scoreboard's `write()` function follows a six-step decision tree to avoid false failures:
 
 ```systemverilog
 // Step 1: Predict error before anything else
@@ -469,21 +463,6 @@ UVM_INFO [apb_coverage] APB functional coverage = 100.00%
 ```
 
 ---
-##RAL Smoke Test Result
-The apb_ral_smoke_test validates the RAL frontdoor path through the APB agent and confirms that register-level operations correctly translate into APB bus transactions. The test performs reset-value reads, GPIO register writes and reads, SET/CLEAR side-effect checks, timer register accesses, volatile timer reads, timer clear writes, and scratchpad memory write/read checks.
-
-Representative RAL output:
-
-RAL CHECK PASS ral.gpio_data = 0x000000AA
-RAL CHECK PASS ral.gpio_dir  = 0x000000FF
-RAL MEM CHECK PASS scratch_mem[0] = 0xDEADBEEF
-RAL MEM CHECK PASS scratch_mem[1] = 0xCAFE1234
-UVM_WARNING : 0
-UVM_ERROR   : 0
-UVM_FATAL   : 0
-APB functional coverage = 77.76%
-
-This confirms that the RAL model, register adapter, APB frontdoor access path, monitor, DPI-C scoreboard, and coverage collector are integrated correctly.
 
 ## Simulation Results
 
@@ -635,4 +614,3 @@ exit
 | Formal covers not checked in second run | `cover` properties confirm reachability but were not reported as passing/failing | Run `sby` with `mode cover` separately to verify all cover targets are reachable |
 
 ---
-
